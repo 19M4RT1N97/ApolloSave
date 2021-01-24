@@ -1,0 +1,9 @@
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+mat-card{
+    width: 50%;
+    margin-left: 25%;
+}

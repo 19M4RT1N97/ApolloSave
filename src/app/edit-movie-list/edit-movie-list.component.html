@@ -1,0 +1,6 @@
+<h1>Edit Movies</h1>
+<div class="results transition" [ngClass]="{ visible: movies?.length }">
+    <button mat-button color="accent" class="createNewM" [routerLink]="['/admin/editMovie', 0]">Create New Movie</button>
+    <a class="edit-movie-list-item item" *ngFor="let movie of movies" [movie]="movie" routerLink="/editMovie" [routerLink]="['/admin/editMovie', movie?.movieId]">
+    </a>
+</div>

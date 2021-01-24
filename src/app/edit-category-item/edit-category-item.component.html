@@ -1,0 +1,28 @@
+<div class="content">
+  <h1>Category</h1>
+  <form
+    #myForm="ngForm"
+    (ngSubmit)="submitForm()"
+  >
+    <mat-form-field>
+      <mat-label>CategoryId: </mat-label>
+      <input name="CategoryId" matInput
+        [(ngModel)]="category.categoryId" readonly
+        >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Price: </mat-label>
+      <input name="Price" matInput
+        [(ngModel)]="category.price" type="text" required pattern="^\d{1,3}(\.\d{1,2})?"
+        >
+    </mat-form-field>
+
+    <button type="submit" mat-flat-button color="accent" 
+      [disabled]="myForm.invalid">Save</button>
+  </form>
+  <button mat-flat-button color="accent"  (click)="backClicked()">
+    Back</button>
+  <button mat-flat-button color="accent" (click)="deleteClicked()"
+    [disabled]="!isUpdatingCategory">Delete</button>
+</div>

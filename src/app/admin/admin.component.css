@@ -1,0 +1,10 @@
+mat-grid-list{
+    background-color: white;
+}
+
+mat-grid-tile  {
+    background-color:  #424242;
+    font-size: 700%;
+    color: #f4511e;
+}
+

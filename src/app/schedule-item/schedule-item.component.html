@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>{{ movie?.title }}</mat-card-title>
+  <mat-card-subtitle>ScheduleID: {{ schedule?.scheduleId }}</mat-card-subtitle>
+  <img mat-image [src]="url" height="200">
+  <mat-card-content>
+    <div>CinemaHallId: {{ schedule?.cinemaHallId }}</div>
+    <div>Starts: {{ schedule?.startsAt }}</div>
+    <mat-progress-bar mode="determine" [(value)]="fillState" [(color)]="progressColor"></mat-progress-bar>
+  </mat-card-content>
+</mat-card>
+<br>

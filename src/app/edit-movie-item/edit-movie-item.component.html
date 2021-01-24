@@ -1,0 +1,72 @@
+<div class="content">
+<h1>Movie</h1>
+<form  class="ui large form"
+  #myForm="ngForm"
+  (ngSubmit)="submitForm()"
+>
+  <mat-form-field>
+    <mat-label>MovieId: </mat-label>
+    <input name="MovieId" matInput
+      [(ngModel)]="movie.movieId" readonly 
+      >
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Title: </mat-label>
+    <input name="Title" matInput
+      [(ngModel)]="movie.title" required
+      >
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>ShortDesc: </mat-label>
+    <textarea name="ShortDesc" class="shortDesc" matInput
+      [(ngModel)]="movie.shortDesc" required 
+      ></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>GenreId: </mat-label>
+    <select name="GenreId" matNativeControl matInput
+      [(ngModel)]="movie.genreId" required >
+      <option *ngFor="let x of genreSelect; let i = index" [value]="x.genreId">{{x.genreText}}</option>
+    </select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Movielength: </mat-label>
+    <input name="MovieLength" matInput
+        [(ngModel)]="movie.movieLength"  type="number" required min="1"
+    >
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Actors: </mat-label>
+    <input name="Actors" matInput
+        [(ngModel)]="movie.actors" required
+    >
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Trailer: </mat-label>
+    <input name="Trailer" matInput
+        [(ngModel)]="movie.trailer" required
+    >
+  </mat-form-field>
+
+  <div>
+    <img [src]="url" height="200"><br>
+    <input name="MoviePicture"
+      (change)="onFileLoad($event)"
+      type="file" value="Upload"
+    >
+  </div>
+  <button type="submit" mat-flat-button color="accent" 
+    [disabled]="myForm.invalid">Save</button>
+</form>
+<button (click)="deleteClicked()" mat-flat-button color="accent" 
+  [disabled]="!isUpdatingMovie">Delete</button>
+
+<button mat-flat-button color="accent" 
+  (click)="backClicked()">Back</button>
+</div>

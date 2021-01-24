@@ -1,0 +1,6 @@
+<h1>Edit Categories</h1>
+<div class="results transition" [ngClass]="{ visible: categories?.length }">
+    <button class="createNewCat" mat-button color="accent" [routerLink]="['/admin/editCategory', 0]">Create New Category</button>
+    <a class="edit-category-list-item item" *ngFor="let category of categories" [category]="category" routerLink="/editCategory" [routerLink]="['/admin/editCategory', category?.categoryId]">
+    </a>
+</div>

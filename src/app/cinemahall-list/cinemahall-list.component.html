@@ -1,0 +1,6 @@
+<h1>Edit Cinemahall</h1>
+<div class="results transition" [ngClass]="{ visible: cinemaHalls?.length }">
+  <button class="createNewCHall" mat-button color="accent" [routerLink]="['/admin/editCinemaHall', 0]">Create New CinemaHall</button>
+  <a class="cinemahall-list-item item" *ngFor="let cinemaHall of cinemaHalls" [cinemaHall]="cinemaHall" routerLink="/editCinemaHall" [routerLink]="['/admin/editCinemaHall', cinemaHall?.cinemaHallId]">
+  </a>
+</div>

@@ -1,0 +1,29 @@
+<h1>Cinemahall</h1>
+<div class="content">
+  <form 
+    #myForm="ngForm"
+    (ngSubmit)="submitForm()"
+  >
+    <mat-form-field class="cinemaHallId">
+      <mat-label>CinemaHallId: </mat-label>
+      <input name="CinemaHallId" matInput 
+        [(ngModel)]="cinemaHall.cinemaHallId" readonly 
+        >
+    </mat-form-field>
+    <mat-form-field class="cinemaHallName">
+      <mat-label>CinemaHallName: </mat-label>
+      <input name="CinemaHallName" matInput
+        [(ngModel)]="cinemaHall.cinemaHallName" type="text" required
+        >
+    </mat-form-field>
+    <button type="submit" mat-flat-button color="accent" 
+      [disabled]="myForm.invalid">Save</button>
+  </form>
+  <button mat-flat-button color="accent" [routerLink]="['/admin/editCinemaHall/Layout', cinemaHall.cinemaHallId]"
+      [disabled]="!isUpdatingCinemaHall">Edit Layout</button>
+  <br>
+  <button mat-flat-button color="accent" (click)="backClicked()"
+      >Back</button>
+  <button mat-flat-button color="accent" (click)="deleteClicked()"
+    [disabled]="!isUpdatingCinemaHall">Delete</button>
+</div>

@@ -1,0 +1,43 @@
+<div class="content">
+  <h1>Schedule</h1>
+  <form  class="ui large form"
+    #myForm="ngForm"
+    (ngSubmit)="submitForm()"
+  >
+    <mat-form-field class="field">
+      <mat-label>ScheduleId: </mat-label>
+      <input name="ScheduleId" matInput
+        [(ngModel)]="schedule.scheduleId" readonly 
+        >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>CinemaHallId: </mat-label>
+      <input name="CinemaHallId" matInput
+        [(ngModel)]="schedule.cinemaHallId" type="number" min="1" required
+        >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>MovieId: </mat-label>
+      <input name="MovieId" matInput
+        [(ngModel)]="schedule.movieId" required type="number" min="1" required
+        >
+    </mat-form-field>
+    <br>
+    <div>
+      <mat-label>Starts At: </mat-label>
+      <input name="StartsAt"
+        [(ngModel)]="schedule.startsAt" Type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required
+        >
+    </div>
+    <br>
+    <button type="submit" mat-flat-button color="accent"
+      [disabled]="myForm.invalid">Save</button>
+  
+  </form> 
+  <button mat-flat-button color="accent" (click)="backClicked()"
+    >Back</button>
+  <button mat-flat-button color="accent" (click)="deleteClicked()"
+    [disabled]="!isUpdatingSchedule">Delete</button>
+</div>

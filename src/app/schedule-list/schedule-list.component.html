@@ -1,0 +1,10 @@
+<div class="searchBar">
+  <input matInput color="accent" (keyup)="keyup.emit(searchTerm.value)" #searchTerm type="text" placeholder="Suche..."/>
+  <br>
+  <input matInput color="accent" type="date" #searchDate (change)="datechanged.emit(searchDate.value)"/>
+</div>
+<div class="scheduleList">
+  <a  class="schedule-item item" *ngFor="let schedule of schedules" [schedule]="schedule" 
+      routerLink="/movie" [routerLink]="['/movie', schedule.movieId]">
+  </a>
+</div>

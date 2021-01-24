@@ -1,0 +1,8 @@
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, .createNewCat{
+    margin-left: 25%;
+}

@@ -1,0 +1,6 @@
+<h1>Edit Schedules</h1>
+<div class="results transition" [ngClass]="{ visible: schedules?.length }">
+  <button mat-button color="accent" [routerLink]="['/admin/editSchedule', 0]" class="createNewS">Create New Schedule</button>
+  <a class="schedule-item item" *ngFor="let schedule of schedules" [schedule]="schedule" routerLink="/editSchedule" [routerLink]="['/admin/editSchedule', schedule?.scheduleId]">
+  </a>
+</div>
